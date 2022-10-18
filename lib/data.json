@@ -1,0 +1,125 @@
+{
+    "name": "Felix Rzayev",
+    "subtitle": "Flutter Developer",
+    "phoneNumber": "+994 50 247 83 79",
+    "email": "felixrzayev@gmail.com",
+    "location": "Baku, Azerbaijan",
+    "instagram": "https://www.instagram.com/leninskyavenue/",
+    "twitter": "https://twitter.com/FelixRzayev",
+    "linkedIn": "https://www.linkedin.com/in/rzayev-farid/",
+    "github": "https://github.com/felixrzayev",
+    "telegran": "https://t.me/rzayev_f",
+    "about": {
+        "into": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "highlights": [
+            "Lorem Ipsum is asdasd dummy text",
+            "Lorem Ipsasdasum is simply dummy text",
+            "Lorem Ipasdsakdsum is simply dummy text",
+            "Lorem Ipsum is dsadasdsimply dummy text"
+        ]
+    },
+    "education": [
+        {
+            "degree": "Master of Science in Petroleum Engineering",
+            "university": "Brunel University",
+            "location": "London, UK",
+            "startDate": "Sep, 2014",
+            "endDate": "Dec, 2016"
+        },
+        {
+            "degree": "Bachelor of Science in Well Drilling",
+            "university": "Gubkin Russian State University of Oil and Gas",
+            "location": "Moscow, Russia",
+            "startDate": "Sep, 2010",
+            "endDate": "July, 2014"
+        }
+    ],
+    "languages": [
+        {
+            "language": "English",
+            "level": "Fluent"
+        },
+        {
+            "language": "Azerbaijani",
+            "level": "Native"
+        },
+        {
+            "language": "Turkish",
+            "level": "Fluent"
+        },
+        {
+            "language": "Russian",
+            "level": "Native"
+        }
+    ],
+    "certification": [
+        {
+            "institution": "PMI",
+            "title": "PMP",
+            "date": "Dec, 2021"
+        },
+        {
+            "institution": "TapRoot",
+            "title": "TapRoot Incident Investigation, and Root Cause Analysis",
+            "date": "Feb, 2020"
+        }
+    ],
+    "skills": [
+        "Flutter",
+        "Dart",
+        "BLoC",
+        "Provider",
+        "Firebase",
+        "GraphQL",
+        "RESTful APIs",
+        "Android/iOS",
+        "Webviews",
+        "GIT",
+        "OOP",
+        "GoF Patterns",
+        "Clean Architecture",
+        "Agile methodology",
+        "Project management",
+        "Power BI"
+    ],
+    "experience": [
+        {
+            "company": "Geninusto UK",
+            "title": "IT Project Manager",
+            "location": "Remote",
+            "startDate": "Feb, 2022",
+            "endDate": "Present",
+            "highlights": [
+                "sdsd Lorem Ipasdsakdsum is simply dummy text",
+                "Loresdsdm Ipasdsakdsum is simply dummy text",
+                "Loresadsam Ipasdsakdsum is simply dummy text",
+                "Lorem Ipsddssum is asdasd dummy text"
+            ]
+        },
+        {
+            "company": "Safarico",
+            "title": "Flutter Developer",
+            "location": "Baku, Azerbaijan",
+            "startDate": "Sep, 2020",
+            "endDate": "Sep, 2021",
+            "highlights": [
+                "sdsd Lorem Ipasdsakdsum iddds simply dummy text",
+                "Loresdsdm Ipasdsakdsum iaaas simply dummy text",
+                "Loresadsam Ipasdsakdsum ies ssssimply dummy text",
+                "Lorem Ipsddssum is asdasd dummy text"
+            ]
+        },
+        {
+            "company": "Weatherford",
+            "title": "Project Manager",
+            "location": "Baku, Azerbaijan",
+            "startDate": "Sep, 2020",
+            "endDate": "Sep, 2021",
+            "highlights": [
+                "sdsd Lorem Ipasdsakdsum iddds simply dummsssy text",
+                "Loresdsdm Ipasdsakdsum iaaas simply dummy textss",
+                "Loresadsam Ipasdsakdsum ies ssssimply dummy texat"
+            ]
+        }
+    ]
+}

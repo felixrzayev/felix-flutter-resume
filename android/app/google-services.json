@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "882705981155",
+    "firebase_url": "https://felix-resume-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "felix-resume",
+    "storage_bucket": "felix-resume.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:882705981155:android:45c36b3ca4bb3a96476fd6",
+        "android_client_info": {
+          "package_name": "cv.cv"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "882705981155-8kk2qpekdr11m7njmmaher6q6qpcihc3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAP8jenYXwtFEo_VsBPd6VEqPpCLyi61L4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "882705981155-8kk2qpekdr11m7njmmaher6q6qpcihc3.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "882705981155-jan3jaddklq3g3gp54aatjq742p6g5c2.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "cv.cv"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
