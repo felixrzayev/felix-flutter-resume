@@ -62,7 +62,7 @@ class _CompanyPageState extends State<CompanyPage> {
       padding: const EdgeInsets.symmetric(vertical: 8.0),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisSize: MainAxisSize.max,
+        // mainAxisSize: MainAxisSize.max,
         children: [
           SizedBox(
             width: 50,
@@ -72,23 +72,47 @@ class _CompanyPageState extends State<CompanyPage> {
               child: Image.network(exp.image),
             ),
           ),
-          Flexible(
+          SizedBox(
+            width: 15,
+            height: 50,
+          ),
+          Expanded(
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                multiChildLayout(
+                _buildLayout(
                   forTablet: isTablet,
-                  rowAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(exp.title),
-                    Text(exp.company),
+                    Text(
+                      exp.title,
+                      style: header2BoldTextStyle,
+                    ),
+                    Text(
+                      exp.company,
+                      style: bulletPointTextStyle,
+                    ),
                   ],
                 ),
-                _buildRow(
-                  isTablet: isTablet,
+                _buildLayout(
+                  forTablet: isTablet,
                   children: [
-                    Text("${exp.startDate} - ${exp.endDate}"),
-                    Text(exp.location),
+                    Text(
+                      exp.location,
+                      style: bulletPointTextStyle,
+                    ),
+                    Text(
+                      "${exp.startDate} - ${exp.endDate}",
+                      style: bulletPointTextStyle,
+                    ),
                   ],
+                ),
+                SizedBox(height: 5),
+                LayoutBuilder(
+                  builder: (_, __) => Wrap(
+                    children: exp.highlights
+                        .map((e) => commonBulletPoint(e))
+                        .toList(),
+                  ),
                 ),
               ],
             ),
@@ -98,18 +122,18 @@ class _CompanyPageState extends State<CompanyPage> {
     );
   }
 
-  Widget _buildRow({
+  Widget _buildLayout({
     required List<Widget> children,
-    required bool isTablet,
+    required bool forTablet,
   }) {
-    if (isTablet) {
+    if (forTablet) {
       return Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        mainAxisSize: MainAxisSize.max,
         children: children,
       );
     }
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: children,
     );
   }
