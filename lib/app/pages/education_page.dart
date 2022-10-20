@@ -28,9 +28,11 @@ class EducationPage extends StatelessWidget {
           ),
           greyLine(context, pad: 24),
           commonBulletPoint(languages, style: header2BoldTextStyle),
+          SizedBox(height: 12),
           _buildLanguages(data.languages),
           greyLine(context, pad: 24),
           commonBulletPoint(certification, style: header2BoldTextStyle),
+          SizedBox(height: 12),
           LayoutBuilder(
             builder: (_, __) => Wrap(
               children:

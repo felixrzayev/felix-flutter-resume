@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import '../../data/strings.dart';
 import '../../model/data_model.dart';
 import '../widgets/base_page.dart';
+import '../widgets/common_layouts.dart';
 
 class AboutPage extends StatelessWidget {
   AboutPage(GlobalKey key) : super(key: key);
@@ -28,7 +29,7 @@ class AboutPage extends StatelessWidget {
             children: <Widget>[
               CommonPageTitle(aboutMe),
               SizedBox(height: 32),
-              _multiChildLayout(
+              multiChildLayout(
                 forTablet: isTabletSize,
                 children: <Widget>[
                   Flexible(
@@ -63,29 +64,5 @@ class AboutPage extends StatelessWidget {
         },
       ),
     );
-  }
-
-  //----------------------------------------------------------------------------
-  // Layout
-  //----------------------------------------------------------------------------
-
-  Widget _multiChildLayout({
-    required bool forTablet,
-    List<Widget>? children,
-  }) {
-    Widget result;
-    if (!forTablet) {
-      result = Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisSize: MainAxisSize.min,
-        children: children!,
-      );
-    } else {
-      result = Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: children!,
-      );
-    }
-    return result;
   }
 }

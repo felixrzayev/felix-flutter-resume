@@ -199,6 +199,7 @@ class Experience {
     required this.company,
     required this.title,
     required this.location,
+    required this.image,
     required this.startDate,
     required this.endDate,
     required this.highlights,
@@ -206,6 +207,7 @@ class Experience {
 
   String company;
   String title;
+  String image;
   String location;
   String startDate;
   String endDate;
@@ -214,6 +216,7 @@ class Experience {
   factory Experience.fromJson(Map<String, dynamic> json) => Experience(
         company: json["company"],
         title: json["title"],
+        image: json["image"],
         location: json["location"],
         startDate: json["startDate"],
         endDate: json["endDate"],
@@ -222,8 +225,9 @@ class Experience {
 
   factory Experience.fromSnapshot(DataSnapshot ds) => Experience(
         company: ds.child('company').value.toString(),
+        image: ds.child('image').value.toString(),
         title: ds.child('title').value.toString(),
-        location: ds.child('locationn').value.toString(),
+        location: ds.child('location').value.toString(),
         startDate: ds.child('startDate').value.toString(),
         endDate: ds.child('endDate').value.toString(),
         highlights: List<String>.from(
