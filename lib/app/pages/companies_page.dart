@@ -1,13 +1,10 @@
 import 'package:felixrzayev/app/widgets/common_widgets_titles.dart';
-import 'package:felixrzayev/app/widgets/animated_text.dart';
-import 'package:felixrzayev/app/widgets/react_button.dart';
 import 'package:flutter/material.dart';
 
 import '../../data/rep/inherited_data.dart';
 import '../../model/data_model.dart';
 import '../widgets/base_page.dart';
 import '../../data/constants.dart';
-import '../widgets/common_layouts.dart';
 
 class CompanyPage extends StatefulWidget {
   CompanyPage(GlobalKey key) : super(key: key);
@@ -62,7 +59,6 @@ class _CompanyPageState extends State<CompanyPage> {
       padding: const EdgeInsets.symmetric(vertical: 8.0),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
-        // mainAxisSize: MainAxisSize.max,
         children: [
           SizedBox(
             width: 50,
@@ -85,11 +81,11 @@ class _CompanyPageState extends State<CompanyPage> {
                   children: [
                     Text(
                       exp.title,
-                      style: header2BoldTextStyle,
+                      style: h4TextStyle,
                     ),
                     Text(
                       exp.company,
-                      style: bulletPointTextStyle,
+                      style: t1TextStyle,
                     ),
                   ],
                 ),
@@ -98,19 +94,21 @@ class _CompanyPageState extends State<CompanyPage> {
                   children: [
                     Text(
                       exp.location,
-                      style: bulletPointTextStyle,
+                      style: t1TextStyle,
                     ),
                     Text(
                       "${exp.startDate} - ${exp.endDate}",
-                      style: bulletPointTextStyle,
+                      style: t1TextStyle,
                     ),
                   ],
                 ),
-                SizedBox(height: 5),
+                //TODO: Paddings
+                SizedBox(height: 12),
                 LayoutBuilder(
                   builder: (_, __) => Wrap(
                     children: exp.highlights
-                        .map((e) => commonBulletPoint(e))
+                        .map((e) => commonBulletPoint(e,
+                            rowAlignment: CrossAxisAlignment.start))
                         .toList(),
                   ),
                 ),

@@ -31,7 +31,7 @@ class _AnimatedTextState extends State<AnimatedText>
     );
     _colorTween = ColorTween(
       begin: Colors.black87,
-      end: subColor,
+      end: outlineColor,
     ).animate(_controller);
   }
 

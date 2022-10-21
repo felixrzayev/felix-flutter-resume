@@ -2,11 +2,15 @@ import 'package:felixrzayev/model/data.dart';
 import 'package:felixrzayev/data/constants.dart';
 import 'package:flutter/material.dart';
 
+import '../../data/rep/inherited_data.dart';
+import '../../model/data_model.dart';
 import 'base_page.dart';
 
 class AppTabBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    DataModel data = InheritedData.of(context).data;
+
     return BasePage(
       color: mainColor,
       child: Padding(
@@ -36,19 +40,11 @@ class AppTabBar extends StatelessWidget {
               text: TextSpan(
                 children: <TextSpan>[
                   TextSpan(
-                    text: "${Data.NAME}",
+                    text: data.name,
                     style: TextStyle(
-                      color: Colors.white,
+                      color: blackColor,
                       fontWeight: FontWeight.bold,
                       fontSize: 20,
-                    ),
-                  ),
-                  TextSpan(
-                    text: ' ●',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 14,
-                      color: subColor,
                     ),
                   ),
                 ],

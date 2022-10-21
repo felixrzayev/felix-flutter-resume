@@ -1,6 +1,6 @@
 import 'package:felixrzayev/app/pages/contact_page.dart';
 import 'package:felixrzayev/app/pages/left_panel_menu.dart';
-import 'package:felixrzayev/app/widgets/tab_bar.dart';
+import 'package:felixrzayev/app/widgets/mobile_app_bar.dart';
 import 'package:flutter/material.dart';
 
 import 'about_page.dart';
@@ -19,10 +19,6 @@ class _MainPageState extends State<MainPage> {
 
   void _downloadCV() {
     // launch(Data.CV_URL);
-  }
-
-  void _hireMe() {
-    // scrollToIndex(keys.length - 1);
   }
 
   Widget pagePadding() => const SizedBox(height: pagePaddingSize);
@@ -62,10 +58,14 @@ class _MainPageState extends State<MainPage> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          _buildNavigation(true),
+          // MaxWidth - 1160 pixels
+          LimitedBox(
+            maxWidth: 284,
+            child: _buildNavigation(true),
+          ),
           SizedBox(width: 24),
           LimitedBox(
-            maxWidth: 720,
+            maxWidth: 852,
             child: _buildListDetail(true),
           )
         ],

@@ -40,7 +40,7 @@ class AboutPage extends StatelessWidget {
                           data.about.into,
                           style: TextStyle(
                             fontSize: 18,
-                            color: textColor,
+                            color: blackColor,
                           ),
                         ),
                         SizedBox(height: 24),
@@ -49,7 +49,10 @@ class AboutPage extends StatelessWidget {
                             direction: Axis.horizontal,
                             children: data.about.highlights
                                 .toList()
-                                .map((e) => commonBulletPoint(e))
+                                .map((e) => commonBulletPoint(
+                                      e,
+                                      rowAlignment: CrossAxisAlignment.start,
+                                    ))
                                 .toList(),
                           ),
                         ),

@@ -7,6 +7,7 @@ const String certification = "Certifications";
 const String languages = "Languages";
 const String experience = "Experience";
 const String contact = "Get in touch";
+const String resumeDownload = "Download resume";
 
 // Pages
 const String name = "Name";

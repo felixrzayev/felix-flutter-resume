@@ -51,7 +51,7 @@ class _GetInTouchPageState extends State<GetInTouchPage> {
           borderRadius: BorderRadius.circular(18),
         ),
         focusedBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: subColor, width: 1.0),
+          borderSide: BorderSide(color: outlineColor, width: 1.0),
           borderRadius: BorderRadius.circular(18),
         ),
         hintText: hint,
@@ -61,7 +61,7 @@ class _GetInTouchPageState extends State<GetInTouchPage> {
         ),
       ),
       style: TextStyle(fontSize: 14),
-      cursorColor: subColor,
+      cursorColor: outlineColor,
       validator: (value) {
         if (value!.trim().isEmpty) {
           return 'The field is required';
@@ -81,7 +81,7 @@ class _GetInTouchPageState extends State<GetInTouchPage> {
       children: <Widget>[
         Icon(
           icon,
-          color: subColor,
+          color: outlineColor,
           size: 28,
         ),
         SizedBox(width: 12),
@@ -114,7 +114,7 @@ class _GetInTouchPageState extends State<GetInTouchPage> {
     return MaterialButton(
       padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
       onPressed: submit,
-      color: isSubmitting ? Colors.grey : subColor,
+      color: isSubmitting ? Colors.grey : outlineColor,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(32),
       ),

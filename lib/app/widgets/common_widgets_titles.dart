@@ -14,12 +14,9 @@ class CommonPageTitle extends StatelessWidget {
       children: <Widget>[
         Text(
           title,
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 24,
-          ),
+          style: h1TextStyle,
         ),
-        SizedBox(height: 12),
+        // SizedBox(height: 12),
         greyLine(context),
       ],
     );
@@ -28,19 +25,19 @@ class CommonPageTitle extends StatelessWidget {
 
 Widget commonBulletPoint(
   String text, {
-  TextStyle style = bulletPointTextStyle,
-  Color color = Colors.black,
+  TextStyle style = t1TextStyle,
+  Color color = outlineColor,
+  CrossAxisAlignment rowAlignment = CrossAxisAlignment.center,
 }) {
   return Padding(
     padding: const EdgeInsets.only(bottom: 6),
     child: Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: rowAlignment,
       children: [
         Text(
           '\u2022',
           style: TextStyle(
-            fontSize: 16,
-            height: 1.55,
+            fontSize: 18,
             color: color,
           ),
         ),
@@ -62,15 +59,15 @@ Widget commonBulletPoint(
   );
 }
 
-Widget greyLine(BuildContext context, {double pad = 0}) {
+Widget greyLine(BuildContext context,
+    {double padBottom = 0, double padTop = 12}) {
   return Padding(
-    padding: EdgeInsets.symmetric(vertical: pad),
+    padding: EdgeInsets.only(bottom: padBottom, top: padTop),
     child: Container(
       width: MediaQuery.of(context).size.width,
       height: 2,
       decoration: BoxDecoration(
-        // TODO: use standard color
-        color: Colors.grey[100],
+        color: mainColor,
         borderRadius: BorderRadius.circular(16),
       ),
     ),

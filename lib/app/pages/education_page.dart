@@ -19,20 +19,26 @@ class EducationPage extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           CommonPageTitle(education),
-          SizedBox(height: 32),
+          SizedBox(height: 30),
           LayoutBuilder(
             builder: (_, constrains) => Wrap(
               direction: Axis.horizontal,
               children: data.education.map((e) => _buildUni(e)).toList(),
             ),
           ),
-          greyLine(context, pad: 24),
-          commonBulletPoint(languages, style: header2BoldTextStyle),
-          SizedBox(height: 12),
+          // Certification
+          Padding(
+            padding: const EdgeInsets.only(top: 24.0),
+            child: Text(languages, style: h3TextStyle),
+          ),
+          greyLine(context, padBottom: 24),
           _buildLanguages(data.languages),
-          greyLine(context, pad: 24),
-          commonBulletPoint(certification, style: header2BoldTextStyle),
-          SizedBox(height: 12),
+          // Certification
+          Padding(
+            padding: const EdgeInsets.only(top: 24.0),
+            child: Text(certification, style: h3TextStyle),
+          ),
+          greyLine(context, padBottom: 24),
           LayoutBuilder(
             builder: (_, __) => Wrap(
               children:
@@ -46,7 +52,7 @@ class EducationPage extends StatelessWidget {
 
   Widget _buildUni(Education education) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 8.0),
+      padding: const EdgeInsets.symmetric(vertical: 6.0),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -63,12 +69,12 @@ class EducationPage extends StatelessWidget {
               children: [
                 commonBulletPoint(
                   education.degree,
-                  style: header2BoldTextStyle,
+                  style: h4TextStyle,
                   color: Colors.transparent,
                 ),
                 commonBulletPoint(
                   "${education.university}, ${education.location}",
-                  style: header2TextStyle,
+                  style: t1TextStyle,
                   color: Colors.transparent,
                 ),
                 commonBulletPoint(
@@ -87,8 +93,8 @@ class EducationPage extends StatelessWidget {
     return LayoutBuilder(
       builder: (_, constrain) {
         final maxWidth = constrain.maxWidth;
-        final widthForTablet = 500;
-        final skillWidth = maxWidth / 3;
+        // final widthForTablet = 500;
+        final skillWidth = maxWidth / 2;
         // maxWidth > widthForTablet ? (maxWidth - 24) / 2 : maxWidth;
         return Wrap(
           // spacing: 3,
@@ -99,7 +105,7 @@ class EducationPage extends StatelessWidget {
                   width: skillWidth,
                   child: commonBulletPoint(
                     "${lang.language} - ${lang.level}",
-                    color: Colors.transparent,
+                    // color: Colors.transparent,
                   ),
                 ),
               )
@@ -110,18 +116,20 @@ class EducationPage extends StatelessWidget {
   }
 
   Widget _buildCertsRow(Certification cert) {
-    return Column(
-      children: [
-        commonBulletPoint(
-          cert.title,
-          style: header3BoldTextStyle,
-          color: Colors.transparent,
-        ),
-        commonBulletPoint(
-          "${cert.institution}, ${cert.date}",
-          color: Colors.transparent,
-        ),
-      ],
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 6.0),
+      child: Column(
+        children: [
+          commonBulletPoint(
+            cert.title,
+            style: h4TextStyle,
+          ),
+          commonBulletPoint(
+            "${cert.institution}, ${cert.date}",
+            color: Colors.transparent,
+          ),
+        ],
+      ),
     );
   }
 }

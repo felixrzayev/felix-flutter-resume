@@ -1,36 +1,29 @@
 import 'package:flutter/material.dart';
 
-// TODO: Change mainColor to White
-const mainColor = Color.fromARGB(255, 167, 223, 199);
-const subColor = Color(0xff2D63BC);
+// Colors
+const blackColor = Color(0xFF151515);
+const mainColor = Color(0xFFF4F4F4);
+const backgroundColor = Color(0xFFFAFAFA);
+const outlineColor = Color(0xFFF65F2F);
 
-const textColor = Colors.black87;
+// Typography
+const h1TextStyle = TextStyle(fontSize: 28, color: blackColor);
+const h2TextStyle =
+    TextStyle(fontSize: 22, color: blackColor, fontWeight: FontWeight.w600);
+const h3TextStyle = TextStyle(fontSize: 22, color: blackColor);
+const h4TextStyle =
+    TextStyle(fontSize: 16, color: blackColor, fontWeight: FontWeight.w600);
+const t1TextStyle = TextStyle(fontSize: 16, color: blackColor);
+const t2TextStyle = TextStyle(fontSize: 14, color: blackColor);
 
-const header1TextStyle = TextStyle(fontSize: 22, color: textColor);
-const header2TextStyle = TextStyle(fontSize: 18, color: textColor);
-const header2BoldTextStyle = TextStyle(
-  fontSize: 18,
-  color: textColor,
-  fontWeight: FontWeight.bold,
-);
-const header2ItalicTextStyle =
-    TextStyle(fontSize: 18, color: textColor, fontStyle: FontStyle.italic);
-
-const header3BoldTextStyle = TextStyle(
-  fontSize: 16,
-  color: textColor,
-  fontWeight: FontWeight.bold,
-);
-
-const bulletPointTextStyle = TextStyle(
-  fontSize: 16,
-  color: Colors.black87,
-);
+TextStyle t1TextStyleMetod({Color color = blackColor, double fontSize = 16}) {
+  return TextStyle(fontSize: fontSize, color: color);
+}
 
 const topPaddingSize = 32.0; // header padding
 const pagePaddingSize = 18.0; // Padding used between blocks of information
 
-const minTaletSize = 1080;
+const minTaletSize = 1160;
 
 // Padding between blocks (Pages)
 
@@ -41,3 +34,6 @@ const pageContentPadding = const EdgeInsets.symmetric(
   vertical: verticalPagePadding,
   horizontal: horizontalPagePadding,
 );
+
+
+// paddings 6, 12, 24, 30, 36, 42
