@@ -1,6 +1,7 @@
 import 'package:felixrzayev/app/pages/contact_page.dart';
 import 'package:felixrzayev/app/pages/left_panel_menu.dart';
 import 'package:felixrzayev/app/widgets/mobile_app_bar.dart';
+import 'package:felixrzayev/model/inherited_layout.dart';
 import 'package:flutter/material.dart';
 
 import 'about_page.dart';
@@ -35,22 +36,31 @@ class _MainPageState extends State<MainPage> {
   // BUILD
   //----------------------------------------------------------------------------
 
+  //TODO: Use Inherited widget for layouts
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (_, constrain) {
-        return constrain.maxWidth >= minTaletSize
-            ? _buildTabletBody(constrain.maxWidth)
-            : _buildPhoneBody();
+        return InheritedLayout(
+          isTablet: constrain.maxWidth >= minTaletSize,
+          child: _childLayout(constrain.maxWidth >= minTaletSize),
+        );
       },
     );
+  }
+
+  Widget _childLayout(bool isTablet) {
+    if (isTablet) {
+      return _buildTabletBody();
+    }
+    return _buildPhoneBody();
   }
 
   //----------------------------------------------------------------------------
   // Build for Tablets or PCs
   //----------------------------------------------------------------------------
 
-  Widget _buildTabletBody(double width) {
+  Widget _buildTabletBody() {
     return Scaffold(
       key: _scaffoldKey,
       body: Row(

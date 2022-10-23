@@ -1,6 +1,7 @@
 # Flutter - Resume Web Page
 Resume Web page in Flutter
 
+//TODO: Redo readme 
 
 ## Demo
 [Link](http://thanhnamitit.surge.sh/#/) 

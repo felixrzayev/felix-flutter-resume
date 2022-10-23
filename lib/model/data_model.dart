@@ -109,18 +109,26 @@ class About {
   About({
     required this.into,
     required this.highlights,
+    required this.avatar,
+    required this.cv,
   });
 
   String into;
+  String avatar;
+  String cv;
   List<String> highlights;
 
   factory About.fromJson(Map<String, dynamic> json) => About(
         highlights: List<String>.from(json["highlights"].map((x) => x)),
         into: json["into"],
+        avatar: json["avatar"],
+        cv: json["cv"],
       );
 
   factory About.fromSnapshot(DataSnapshot ds) => About(
         into: ds.child('about/into').value.toString(),
+        avatar: ds.child('about/avatar').value.toString(),
+        cv: ds.child('about/cv').value.toString(),
         highlights: List<String>.from(ds
             .child('about/highlights')
             .children

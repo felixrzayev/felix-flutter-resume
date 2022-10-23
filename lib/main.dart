@@ -4,6 +4,7 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'data/constants.dart';
 import 'data/rep/data_repo.dart';
 import 'data/rep/inherited_data.dart';
 import 'data/strings.dart';
@@ -24,7 +25,9 @@ class App extends StatelessWidget {
       title: webTitle,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        //TODO: Dark theme
         fontFamily: GoogleFonts.openSans().fontFamily,
+        scaffoldBackgroundColor: mainColor,
       ),
       home: FutureBuilder<DataSnapshot>(
         future: getDataSnapshot(),

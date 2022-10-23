@@ -107,8 +107,11 @@ class _CompanyPageState extends State<CompanyPage> {
                 LayoutBuilder(
                   builder: (_, __) => Wrap(
                     children: exp.highlights
-                        .map((e) => commonBulletPoint(e,
-                            rowAlignment: CrossAxisAlignment.start))
+                        .map((e) => commonBulletPoint(
+                              e,
+                              rowAlignment: CrossAxisAlignment.start,
+                              style: t2TextStyle,
+                            ))
                         .toList(),
                   ),
                 ),

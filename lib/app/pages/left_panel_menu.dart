@@ -1,7 +1,7 @@
-import 'package:felixrzayev/model/data.dart';
 import 'package:felixrzayev/data/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 import '../../data/rep/inherited_data.dart';
 import '../../data/strings.dart';
@@ -21,8 +21,8 @@ class LeftPanelMenu extends StatelessWidget {
   Widget build(BuildContext context) {
     DataModel data = InheritedData.of(context).data;
     return Card(
-      color: mainColor,
-      elevation: 12,
+      color: backgroundColor,
+      // elevation: 12,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       child: Padding(
         padding: EdgeInsets.all(32),
@@ -37,20 +37,8 @@ class LeftPanelMenu extends StatelessWidget {
               SizedBox(height: 24),
               _buildSocialButtonList(data),
               SizedBox(height: 24),
-              //TODO: Delete or put your email
-              Align(
-                alignment: Alignment.bottomLeft,
-                child: Text(
-                  Data.EMAIL,
-                  style: TextStyle(
-                    color: Colors.white.withOpacity(.5),
-                    fontWeight: FontWeight.w100,
-                    fontStyle: FontStyle.italic,
-                    fontSize: 12,
-                  ),
-                ),
-              ),
-              downloadAndHirebuttons(),
+              downloadAndHirebuttons(data.about.cv),
+              SizedBox(height: 24),
             ],
           ),
         ),
@@ -69,13 +57,15 @@ class LeftPanelMenu extends StatelessWidget {
       children: [
         Align(
           alignment: Alignment.center,
-          child: SizedBox(
-            width: 72,
-            height: 72,
-            //TODO: Avatar
+          child: Container(
+            width: 124,
+            height: 124,
             child: ClipRRect(
-              child: Placeholder(),
               borderRadius: BorderRadius.circular(10),
+              child: Image.network(
+                data.about.avatar,
+                fit: BoxFit.cover,
+              ),
             ),
           ),
         ),
@@ -159,9 +149,12 @@ class LeftPanelMenu extends StatelessWidget {
       height: 32,
       margin: EdgeInsets.only(right: 12),
       child: FloatingActionButton(
-        onPressed: () {
-          //TODO: fixed urls
-          // launch(url);
+        onPressed: () async {
+          if (await canLaunchUrlString(url)) {
+            await launchUrlString(url);
+          } else {
+            throw "Error occured.";
+          }
         },
         elevation: 2,
         backgroundColor: blackColor.withOpacity(0.8),
@@ -178,11 +171,16 @@ class LeftPanelMenu extends StatelessWidget {
   // Resume button
   //----------------------------------------------------------------------------
 
-  //TODO: add resume for download
-  Widget downloadAndHirebuttons() {
+  Widget downloadAndHirebuttons(String url) {
     return CommonCallToActionButton(
       hoverColor: outlineColor,
-      onPressed: () {},
+      onPressed: () async {
+        if (await canLaunchUrlString(url)) {
+          await launchUrlString(url);
+        } else {
+          throw "Error occured.";
+        }
+      },
       icon: Icons.file_download,
       text: resumeDownload,
       backgroundColor: outlineColor,

@@ -1,4 +1,3 @@
-import 'package:felixrzayev/model/data.dart';
 import 'package:felixrzayev/data/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -14,41 +13,22 @@ class AppTabBar extends StatelessWidget {
     return BasePage(
       color: mainColor,
       child: Padding(
-        padding: EdgeInsets.all(12),
+        padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 5),
         child: Row(
           children: <Widget>[
             IconButton(
               icon: Icon(
                 Icons.menu,
-                color: Colors.white,
+                color: blackColor,
               ),
               onPressed: () {
                 Scaffold.of(context).openDrawer();
               },
             ),
             SizedBox(width: 16),
-            SizedBox(
-              width: 32,
-              height: 32,
-              child: CircleAvatar(
-                backgroundImage: AssetImage(Data.AVATAR),
-                backgroundColor: Colors.white,
-              ),
-            ),
-            SizedBox(width: 16),
-            RichText(
-              text: TextSpan(
-                children: <TextSpan>[
-                  TextSpan(
-                    text: data.name,
-                    style: TextStyle(
-                      color: blackColor,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20,
-                    ),
-                  ),
-                ],
-              ),
+            Text(
+              "${data.name}",
+              style: h3TextStyle,
             ),
           ],
         ),

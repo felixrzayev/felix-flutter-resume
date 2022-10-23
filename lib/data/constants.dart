@@ -35,5 +35,8 @@ const pageContentPadding = const EdgeInsets.symmetric(
   horizontal: horizontalPagePadding,
 );
 
+const mobileContentPadding =
+    const EdgeInsets.symmetric(vertical: 18, horizontal: 18);
+
 
 // paddings 6, 12, 24, 30, 36, 42
